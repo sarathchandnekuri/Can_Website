@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  position: relative;
+  background-color: #FFFEFA;
   display: flex;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
   flex-direction: column;
+  align-items: flex-start;
+  transition: background-color 1.5s ease-in-out;
+  overflow: hidden;
+}
+
+.topBar{
+  width: 100vw;
+  height: 64px;
+  z-index: 1;
+  display: flex;
+  padding: 0px 120px;
+  justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.topBar div{
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.mainContent{
+  height: 100%;
+  width: 100vw; 
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 64px;
+  box-sizing: border-box;
+}
+
+.layerLogo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.controlCenter{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  z-index: 2;
+  left: 520px;
+  bottom: -240px;
+  border-radius: 200px;
+  background: rgba(255, 255, 255, 0.40);
+  display: flex;
+  /* align-items: center; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.can{
+  width: 120px;
+  padding: 20px 0px;
+  margin-bottom: 180px;
+  box-sizing: border-box;
+  transition: transform 1.5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.can:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+#yellowCan{
+  transform: scale(1.25);
+}
+
+
+
+.cansFrame{
+  width: 1472px;
+  height: 1472px;
+  position: absolute;
+  right: -16px;
+  top: 40px;
+  bottom: -718px;
+  border-radius: 736px; 
+  transform: rotate(0deg);
+  transition: transform 1.5s cubic-bezier(.39,.56,.58,1.26);
+}
+
+.mainCan svg{
+  width: 238px;
+  height: 480px;
+}
+
+.mainYellowCan{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0px;
+}
+
+.mainRedCan{
+  position: absolute;
+  left: 918px; 
+  bottom: 249px;
+  transform:translateX(50%) rotate(120deg);
+}
+
+.mainBlueCan{
+  position: absolute;
+  left: 70px;
+  bottom: 249px;
+  transform: translateX(50%) rotate(240deg);
+}
+
+
+.canShadow{
+  text-shadow: 0 2px 20px rgba(0,0,0, 0.25), 0 16px 120px rgba(0,0,0, 1);
+}
+
+#blurCircleTop{
+  width: 1200px;
+  height: 720px;
+  position: absolute;
+  z-index: 0;
+  left: 120px;
+  top: -360px;
+  border-radius: 1200px;
+  background-color: #FFF1CC;
+  filter: blur(100px); 
+  transition: background-color 1.5s ease-in-out;
+}
+
+#blurCircleBottom{
+  width: 720px;
+  height: 720px;
+  position: absolute;
+  z-index: 0;
+  left: 360px;
+  bottom: -360px;
+  border-radius: 720px;
+  background-color: #FFF1CC;
+  filter: blur(100px);
+  -webkit-transition: background-color 2s ease-in-out;
+  transition: background-color 2s ease-in-out;
+}
+
+
+#yellowLabel{
+  transform: translateX(-440px);
+  transition: transform 1.5s ease;
+}
+
+#redLabel{
+  transform: translateX(-880px);
+  transition: transform 1.5s ease;
+}
+
+#blueLabel{
+  transform: translateX(0px);
+  transition: transform 1.5s ease;
 }
